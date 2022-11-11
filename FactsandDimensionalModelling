@@ -1,0 +1,20 @@
+
+
+#start postgres
+start_postgres
+#create a database named billingDW
+createdb -h localhost -U postgres -p 5432 billingDW
+
+In the above command
+
+-h mentions that the database server is running on the localhost
+-U mentions that we are using the user name postgres to log into the database
+-p mentions that the database server is running on port number 5432
+
+Step 3: Download the schema .sql file.
+
+run this command
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Working%20with%20Facts%20and%20Dimension%20Tables/star-schema.sql
+
+Create the schema
+psql  -h localhost -U postgres -p 5432 billingDW < star-schema.sql
